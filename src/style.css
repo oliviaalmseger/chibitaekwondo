@@ -144,4 +144,20 @@ body {
   justify-content: center;
   gap: 0.75rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1.5rem 1rem;
+  }
+
+  .quiz__card {
+    padding: 1.5rem 1rem;
+  }
 }
