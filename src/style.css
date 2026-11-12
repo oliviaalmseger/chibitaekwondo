@@ -1,0 +1,147 @@
+:root {
+  --bg: #2a2a2a;
+  --surface: #000;
+  --text: #f2f2f2;
+  --muted: #a0a0a0;
+  --accent: #ffd91f; /* gult från loggan */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--surface);
+}
+
+.header__logo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav__link {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &.is-active {
+    background: var(--accent);
+    color: var(--bg);
+  }
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Utan denna vinner .btn:s display över hidden-attributet */
+[hidden] {
+  display: none !important;
+}
+
+.btn--success {
+  background: #3ecf6b;
+}
+
+.btn--danger {
+  background: #e5484d;
+  color: #fff;
+}
+
+.btn--muted {
+  background: var(--card);
+  color: var(--text);
+}
+
+.quiz__progress {
+  color: var(--muted);
+  text-align: center;
+}
+
+.quiz__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 220px;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--card);
+  text-align: center;
+}
+
+.quiz__category {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quiz__question {
+  margin: 0;
+}
+
+.quiz__answer {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.quiz__actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
